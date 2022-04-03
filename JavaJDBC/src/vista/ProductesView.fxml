@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ProductesController">
+   <children>
+      <Label layoutX="20.0" layoutY="21.0" text="ID" />
+      <Label layoutX="17.0" layoutY="47.0" text="Nom" />
+      <Label layoutX="19.0" layoutY="71.0" text="Preu" />
+      <Label layoutX="18.0" layoutY="97.0" text="Stock" />
+      <Label layoutX="21.0" layoutY="129.0" text="Inici Cataleg " />
+      <Label layoutX="21.0" layoutY="152.0" text="Fi Cataleg" />
+      <CheckBox fx:id="packCheck" layoutX="104.0" layoutY="183.0" mnemonicParsing="false" onAction="#showPack" text="Pack" />
+      <DatePicker fx:id="endingCatalogueField" layoutX="104.0" layoutY="148.0" prefHeight="25.0" prefWidth="238.0" />
+      <DatePicker fx:id="startCatalogueField" layoutX="104.0" layoutY="125.0" prefHeight="25.0" prefWidth="238.0" />
+      <TextField fx:id="priceField" layoutX="104.0" layoutY="67.0" prefHeight="25.0" prefWidth="395.0" />
+      <TextField fx:id="stockField" layoutX="104.0" layoutY="93.0" prefHeight="25.0" prefWidth="395.0" />
+      <TextField fx:id="nameField" layoutX="104.0" layoutY="43.0" prefHeight="25.0" prefWidth="395.0" />
+      <TextField fx:id="idField" layoutX="104.0" layoutY="17.0" onKeyPressed="#onKeyPressedId" prefHeight="25.0" prefWidth="395.0" />
+      <Button layoutX="283.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionGuardar" text="Guardar" />
+      <Button layoutX="417.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionEliminar" text="Eliminar" />
+      <Button layoutX="491.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionSortir" text="Sortir" />
+      <GridPane fx:id="packInputs" layoutX="104.0" layoutY="201.0" prefHeight="145.0" prefWidth="395.0" visible="false">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Id dels productes que vols modificar" />
+            <TextArea prefHeight="101.0" prefWidth="238.0" GridPane.columnIndex="1" />
+            <Label text="\% descompte" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button layoutX="359.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionListar" text="Listar" />
+   </children>
+</AnchorPane>
